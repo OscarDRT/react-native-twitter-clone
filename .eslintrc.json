@@ -1,0 +1,40 @@
+{
+  "root": true,
+  "extends": "@react-native-community",
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "settings": {
+    "import/resolver": {
+      "babel-module": {}
+    }
+  },
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "tabWidth": 2,
+        "useTabs": false,
+        "semi": false,
+        "singleQuote": true,
+        "printWidth": 80,
+        "arrowParens": "avoid"
+      }
+    ],
+    "semi": "off",
+    "react-native/no-inline-styles": "off",
+    "react-native/no-unused-styles": ["error"],
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": ["error"],
+    "react/react-in-jsx-scope": "off",
+    "import/no-default-export": "off",
+    "react/jsx-uses-react": "off",
+    "react/jsx-indent-props": "on",
+    "react/jsx-indent": "on",
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".jsx", ".js", "ts", "tsx"]
+      }
+    ]
+  }
+}
