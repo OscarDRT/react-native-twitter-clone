@@ -1,20 +1,20 @@
-import { Navigation } from '@root/navigation'
+import React from 'react'
 import { StatusBar } from 'expo-status-bar'
 import { StyleSheet, Text, View } from 'react-native'
-import { SafeAreaProvider } from 'react-native-safe-area-context'
 
-export default function App() {
+export const Profile = () => {
   return (
-    <SafeAreaProvider>
-      <Navigation />
-    </SafeAreaProvider>
+    <View style={styles.container}>
+      <Text>Open up App.tsx to start working on your!</Text>
+      <StatusBar style="auto" />
+    </View>
   )
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: 'red',
     alignItems: 'center',
     justifyContent: 'center',
   },
