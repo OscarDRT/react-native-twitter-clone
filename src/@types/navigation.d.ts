@@ -4,5 +4,8 @@ type RootStackParamList = {
 }
 
 type AppTabParamList = {
-  Profile: undefined
+  Home: undefined
+  Search: undefined
+  Notifications: undefined
+  Inbox: undefined
 }

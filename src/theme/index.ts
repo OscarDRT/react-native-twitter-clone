@@ -1,12 +1,14 @@
+import { scale } from '@root/utils/commons'
 import { createTheme } from '@shopify/restyle'
 
 const palette = {
   primary: '#FFFFFF',
   secondary: '#FFFFFF',
   tertiary: '#FFFFFF',
-  alternate: '#FFFFFF',
+  alternate: 'red',
   primaryBackground: '#FFFFFF',
-  secondaryBackground: '#FFFFFF',
+  secondaryBackground: '#000000',
+  transparent: 'transparent',
 }
 
 const theme = createTheme({
@@ -17,12 +19,14 @@ const theme = createTheme({
     alternate: palette.alternate,
     primaryBackground: palette.primaryBackground,
     secondaryBackground: palette.secondaryBackground,
+    transparent: palette.transparent,
   },
   spacing: {
-    s: 8,
-    m: 16,
-    l: 24,
-    xl: 40,
+    none: 0,
+    s: scale(8),
+    m: scale(16),
+    l: scale(24),
+    xl: scale(40),
   },
   breakpoints: {
     phone: 0,

@@ -3,10 +3,15 @@ import {
   createNavigationContainerRef,
   NavigationContainer,
 } from '@react-navigation/native'
+import { Ionicons } from '@expo/vector-icons'
 
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import { Profile } from '@screens/profile'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import { Home } from '@screens/Home'
+import { Search } from '@screens/Search'
+import { Notifications } from '@screens/Notifications'
+import { Inbox } from '@screens/Inbox'
+import { useTheme } from '@root/theme/ThemeProvider'
 
 export const navigationRef = createNavigationContainerRef()
 
@@ -18,7 +23,7 @@ export const Navigation = () => {
     <NavigationContainer ref={navigationRef}>
       <RootStack.Navigator
         initialRouteName={'TabNavigator'}
-        screenOptions={{ header: () => null }}
+        screenOptions={{ headerShown: false }}
       >
         <RootStack.Screen name={'TabNavigator'} component={TabContainer} />
       </RootStack.Navigator>
@@ -27,9 +32,73 @@ export const Navigation = () => {
 }
 
 const TabContainer = () => {
+  const theme = useTheme()
+
   return (
-    <AppTabs.Navigator>
-      <AppTabs.Screen name={'Profile'} component={Profile} />
+    <AppTabs.Navigator
+      screenOptions={{
+        headerShown: false,
+        tabBarShowLabel: false,
+        tabBarActiveTintColor: theme.colors.secondaryBackground,
+        tabBarInactiveTintColor: theme.colors.secondaryBackground,
+      }}
+    >
+      <AppTabs.Screen
+        name={'Home'}
+        component={Home}
+        options={{
+          tabBarIcon: ({ color, size, focused }) => (
+            <Ionicons
+              name={focused ? 'ios-home-sharp' : 'ios-home-outline'}
+              color={color}
+              size={size}
+            />
+          ),
+        }}
+      />
+      <AppTabs.Screen
+        name={'Search'}
+        component={Search}
+        options={{
+          tabBarIcon: ({ color, size, focused }) => (
+            <Ionicons
+              name={focused ? 'ios-search-sharp' : 'ios-search-outline'}
+              color={color}
+              size={size}
+            />
+          ),
+        }}
+      />
+      <AppTabs.Screen
+        name={'Notifications'}
+        component={Notifications}
+        options={{
+          tabBarIcon: ({ color, size, focused }) => (
+            <Ionicons
+              name={
+                focused
+                  ? 'ios-notifications-sharp'
+                  : 'ios-notifications-outline'
+              }
+              color={color}
+              size={size}
+            />
+          ),
+        }}
+      />
+      <AppTabs.Screen
+        name={'Inbox'}
+        component={Inbox}
+        options={{
+          tabBarIcon: ({ color, size, focused }) => (
+            <Ionicons
+              name={focused ? 'ios-mail-sharp' : 'ios-mail-outline'}
+              color={color}
+              size={size}
+            />
+          ),
+        }}
+      />
     </AppTabs.Navigator>
   )
 }

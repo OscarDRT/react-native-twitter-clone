@@ -3,6 +3,7 @@ import { StatusBar } from 'expo-status-bar'
 import { Box } from '@components/Box'
 import { Text } from '@components/Text'
 import { getUser } from '@root/api/user'
+import { MainContainer } from '@components/Containers/Main'
 
 export const Profile = () => {
   useEffect(() => {
@@ -12,14 +13,8 @@ export const Profile = () => {
   }, [])
 
   return (
-    <Box
-      flex={1}
-      backgroundColor={'primary'}
-      alignItems={'center'}
-      justifyContent={'center'}
-    >
+    <MainContainer margins>
       <Text>Open up App.tsx to start working on your!</Text>
-      <StatusBar style="auto" />
-    </Box>
+    </MainContainer>
   )
 }
