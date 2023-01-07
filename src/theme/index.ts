@@ -1,12 +1,22 @@
 import { createTheme } from '@shopify/restyle'
 
 const palette = {
-  primary: '#188CD8',
+  primary: '#FFFFFF',
+  secondary: '#FFFFFF',
+  tertiary: '#FFFFFF',
+  alternate: '#FFFFFF',
+  primaryBackground: '#FFFFFF',
+  secondaryBackground: '#FFFFFF',
 }
 
 const theme = createTheme({
   colors: {
     primary: palette.primary,
+    secondary: palette.secondary,
+    tertiary: palette.tertiary,
+    alternate: palette.alternate,
+    primaryBackground: palette.primaryBackground,
+    secondaryBackground: palette.secondaryBackground,
   },
   spacing: {
     s: 8,
