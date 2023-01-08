@@ -8,6 +8,8 @@ const palette = {
   alternate: 'red',
   primaryBackground: '#FFFFFF',
   secondaryBackground: '#000000',
+  primaryText: '#101213',
+  secondaryText: '#57636C',
   transparent: 'transparent',
 }
 
@@ -19,6 +21,8 @@ const theme = createTheme({
     alternate: palette.alternate,
     primaryBackground: palette.primaryBackground,
     secondaryBackground: palette.secondaryBackground,
+    primaryText: palette.primaryText,
+    secondaryText: palette.secondaryText,
     transparent: palette.transparent,
   },
   spacing: {
@@ -33,6 +37,18 @@ const theme = createTheme({
     tablet: 768,
   },
   textVariants: {
+    title: {
+      fontSize: scale(17),
+      fontWeight: '700',
+      lineHeight: scale(20),
+      color: 'primaryText',
+    },
+    subtitle: {
+      fontSize: scale(13),
+      fontWeight: '400',
+      lineHeight: scale(16),
+      color: 'secondaryText',
+    },
     defaults: {},
   },
 })

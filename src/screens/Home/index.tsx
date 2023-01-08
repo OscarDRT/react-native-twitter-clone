@@ -1,13 +1,20 @@
 import React from 'react'
 import { MainContainer } from '@components/Containers/Main'
-import { Text } from '@components/Text'
 import { FlashList } from '@shopify/flash-list'
-import { getUser } from '@root/api/user'
+import { HeaderBack } from '@components/Header'
+import { useUserState } from '@root/hooks/user'
 
 export const Home = () => {
+  const { state } = useUserState()
+
+  const { user } = state
+
   return (
-    <MainContainer margins>
-      <Text>Home Screen</Text>
+    <MainContainer>
+      <HeaderBack
+        title={`${user?.name}`}
+        subtitle={`${user?.number_of_tweets} Tweets`}
+      />
     </MainContainer>
   )
 }
