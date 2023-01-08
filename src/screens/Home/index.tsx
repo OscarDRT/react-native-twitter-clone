@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { MainContainer } from '@components/Containers/Main'
 import { Text } from '@components/Text'
 import { FlashList } from '@shopify/flash-list'
