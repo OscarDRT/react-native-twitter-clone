@@ -1,4 +1,5 @@
 type RootStackParamList = {
+  InitialLoad: undefined
   TabNavigator: undefined
   NewTweet: undefined
 }

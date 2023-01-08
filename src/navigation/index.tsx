@@ -12,6 +12,7 @@ import { Search } from '@screens/Search'
 import { Notifications } from '@screens/Notifications'
 import { Inbox } from '@screens/Inbox'
 import { useTheme } from '@root/theme/ThemeProvider'
+import { InitialLoad } from '@screens/InitialLoad'
 
 export const navigationRef = createNavigationContainerRef()
 
@@ -22,9 +23,10 @@ export const Navigation = () => {
   return (
     <NavigationContainer ref={navigationRef}>
       <RootStack.Navigator
-        initialRouteName={'TabNavigator'}
+        initialRouteName={'InitialLoad'}
         screenOptions={{ headerShown: false }}
       >
+        <RootStack.Screen name={'InitialLoad'} component={InitialLoad} />
         <RootStack.Screen name={'TabNavigator'} component={TabContainer} />
       </RootStack.Navigator>
     </NavigationContainer>

@@ -4,10 +4,10 @@ import { Text } from '@components/Text'
 import { FlashList } from '@shopify/flash-list'
 import { getUser } from '@root/api/user'
 
-export const Home = () => {
+export const InitialLoad = () => {
   return (
     <MainContainer margins>
-      <Text>Home Screen</Text>
+      <Text>InitialLoad Screen</Text>
     </MainContainer>
   )
 }
