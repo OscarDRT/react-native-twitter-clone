@@ -2,7 +2,7 @@ import { scale } from '@root/utils/commons'
 import { createTheme } from '@shopify/restyle'
 
 const palette = {
-  primary: '#FFFFFF',
+  primary: '#00ACEE',
   secondary: '#FFFFFF',
   tertiary: '#FFFFFF',
   alternate: 'red',
