@@ -5,6 +5,7 @@ import { HeaderBack } from '@components/Header'
 import { useUserState } from '@root/hooks/user'
 import { Text } from '@components/Text'
 import { ListHeaderComponent } from './auxiliars/ListHeaderComponent'
+import { useTheme } from '@root/theme/ThemeProvider'
 
 const DATA = [
   {
@@ -20,6 +21,8 @@ export const Home = () => {
 
   const { user } = state
 
+  const theme = useTheme()
+
   return (
     <MainContainer>
       <HeaderBack
@@ -27,12 +30,11 @@ export const Home = () => {
         subtitle={`${user?.number_of_tweets} Tweets`}
       />
       <FlashList
-        ListHeaderComponent={() => (
-          <ListHeaderComponent bannerUrl={user?.profile_banner_url} />
-        )}
+        ListHeaderComponent={() => <ListHeaderComponent user={user as User} />}
         data={DATA}
-        renderItem={({ item }) => <Text variant={'title'}>{item.title}</Text>}
+        renderItem={({ item }) => null}
         estimatedItemSize={200}
+        contentContainerStyle={{ paddingHorizontal: theme.spacing.m }}
       />
     </MainContainer>
   )

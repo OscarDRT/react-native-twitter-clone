@@ -4,7 +4,7 @@ import { createTheme } from '@shopify/restyle'
 const palette = {
   primary: '#00ACEE',
   secondary: '#FFFFFF',
-  tertiary: '#FFFFFF',
+  tertiary: '#536471',
   alternate: 'red',
   primaryBackground: '#FFFFFF',
   secondaryBackground: '#000000',
@@ -27,6 +27,7 @@ const theme = createTheme({
   },
   spacing: {
     none: 0,
+    xs: scale(4),
     s: scale(8),
     m: scale(16),
     l: scale(24),
@@ -37,6 +38,12 @@ const theme = createTheme({
     tablet: 768,
   },
   textVariants: {
+    bigTitle: {
+      fontSize: scale(20),
+      fontWeight: '800',
+      lineHeight: scale(24),
+      color: 'primaryText',
+    },
     title: {
       fontSize: scale(17),
       fontWeight: '700',
@@ -48,6 +55,12 @@ const theme = createTheme({
       fontWeight: '400',
       lineHeight: scale(16),
       color: 'secondaryText',
+    },
+    body: {
+      fontSize: scale(15),
+      fontWeight: '400',
+      lineHeight: scale(20),
+      color: 'primaryText',
     },
     defaults: {},
   },
