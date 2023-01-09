@@ -5,6 +5,8 @@ import { scale } from '@root/utils/commons'
 import { Ionicons } from '@expo/vector-icons'
 import { Pressable } from 'react-native'
 import { useTheme } from '@root/theme/ThemeProvider'
+import { useNavigation } from '@react-navigation/native'
+import { StackNavigationProp } from '@react-navigation/stack'
 
 interface IHeaderProps extends BoxProps {
   children: React.ReactNode
@@ -83,17 +85,23 @@ export const HeaderBack: React.FC<IHeaderBack> = ({
 }) => {
   const theme = useTheme()
 
+  const navigation =
+    useNavigation<StackNavigationProp<RootStackParamList, 'root'>>()
+
   return (
     <Header {...props}>
       <HeaderLeft>
         {showBackButton && (
-          <Pressable style={{ marginRight: theme.spacing.l }}>
+          <Pressable
+            style={{ marginRight: theme.spacing.l }}
+            onPress={() => navigation.canGoBack() && navigation.goBack()}
+          >
             <Ionicons name="arrow-back" size={24} color="black" />
           </Pressable>
         )}
-        <Box>
-          <Text variant={'title'}>{title}</Text>
-          <Text variant={'subtitle'}>{subtitle}</Text>
+        <Box justifyContent={'center'}>
+          {!!title && <Text variant={'title'}>{title}</Text>}
+          {!!subtitle && <Text variant={'subtitle'}>{subtitle}</Text>}
         </Box>
       </HeaderLeft>
       {children}

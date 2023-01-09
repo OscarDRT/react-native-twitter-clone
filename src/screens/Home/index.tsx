@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 import { MainContainer } from '@components/Containers/Main'
 import { FlashList } from '@shopify/flash-list'
 import { HeaderBack } from '@components/Header'
@@ -9,7 +9,7 @@ import { useGetMoreTweets, useTweets } from '@root/hooks/tweets'
 import { TweetCardById } from '@components/Cards/tweet'
 import { ActivityIndicator } from 'react-native'
 import { Box } from '@components/Box'
-import { scale } from '@root/utils/commons'
+import { scale, StackNavigationProps } from '@root/utils/commons'
 
 const DATA = [
   {
@@ -20,7 +20,9 @@ const DATA = [
   },
 ]
 
-export const Home = () => {
+export const Home: React.FC<StackNavigationProps<'TabNavigator'>> = ({
+  navigation,
+}) => {
   const { state } = useUserState()
 
   const { user } = state
@@ -30,6 +32,15 @@ export const Home = () => {
   const theme = useTheme()
 
   const { loading, onEndReached } = useGetMoreTweets()
+
+  const onNavigate = useCallback(
+    ({ tweetId }: { tweetId: string }) => {
+      navigation.navigate('Tweet', {
+        tweetId,
+      })
+    },
+    [navigation]
+  )
 
   return (
     <MainContainer>
@@ -41,7 +52,9 @@ export const Home = () => {
         data={tweets}
         keyExtractor={(item, index) => `${item}-${index}`}
         estimatedItemSize={500}
-        renderItem={({ item }) => <TweetCardById id={item} />}
+        renderItem={({ item }) => (
+          <TweetCardById id={item} onPress={tweetId => onNavigate(tweetId)} />
+        )}
         ListHeaderComponent={() => <ListHeaderComponent user={user as User} />}
         ListFooterComponent={() => {
           if (loading) {

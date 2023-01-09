@@ -13,6 +13,7 @@ import { Notifications } from '@screens/Notifications'
 import { Inbox } from '@screens/Inbox'
 import { useTheme } from '@root/theme/ThemeProvider'
 import { InitialLoad } from '@screens/InitialLoad'
+import { Tweet } from '@screens/Tweet'
 
 export const navigationRef = createNavigationContainerRef()
 
@@ -27,6 +28,7 @@ export const Navigation = () => {
         screenOptions={{ headerShown: false }}
       >
         <RootStack.Screen name={'InitialLoad'} component={InitialLoad} />
+        <RootStack.Screen name={'Tweet'} component={Tweet} />
         <RootStack.Screen name={'TabNavigator'} component={TabContainer} />
       </RootStack.Navigator>
     </NavigationContainer>

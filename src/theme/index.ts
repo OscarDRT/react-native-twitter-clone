@@ -62,6 +62,12 @@ const theme = createTheme({
       lineHeight: scale(20),
       color: 'primaryText',
     },
+    bigBody: {
+      fontSize: scale(23),
+      fontWeight: '400',
+      lineHeight: scale(28),
+      color: 'primaryText',
+    },
     defaults: {},
   },
 })
