@@ -10,4 +10,11 @@ To run the app on your local machine, you must first make sure you have an Expo 
 
 ## Built With
 
-- [Expo](https://expo.dev/) - Herramienta para el desarrollo de aplicaciones móviles con React Native.
+- [Expo](https://expo.dev/) - Tool for the development of mobile applications with React Native.
+- [Redux](https://redux.js.org/) - State management library for JavaScript applications.
+- [React Navigation](https://reactnavigation.org/) - Library for navigation between screens in React Native applications.
+- [Axios](https://axios-http.com/) - Library for making HTTP requests.
+- [FlashList](https://shopify.github.io/flash-list/) - Fast & performant React Native list.
+- [Restyle](https://github.com/Shopify/restyle) - The Restyle library provides a type-enforced system for building UI components in React Native with TypeScript. It's a library for building UI libraries, with themability as the core focus.
+
+These are just some of the libraries and tools that have been used in this project. You can find a more complete list of dependencies in the package.json file in the repository.
