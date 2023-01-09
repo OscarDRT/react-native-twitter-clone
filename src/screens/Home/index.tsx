@@ -51,7 +51,7 @@ export const Home: React.FC<StackNavigationProps<'TabNavigator'>> = ({
       />
       <FlashList
         data={tweets}
-        keyExtractor={(item, index) => `${item}-${index}`}
+        //keyExtractor={(item, index) => `${item}-${index}`}
         estimatedItemSize={300}
         renderItem={({ item }) => (
           <TweetCardById id={item} onPress={tweetId => onNavigate(tweetId)} />
