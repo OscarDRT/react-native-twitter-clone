@@ -10,6 +10,4 @@ To run the app on your local machine, you must first make sure you have an Expo 
 
 ## Built With
 
-[![Expo][expo cli]][https://expo.dev/]: Herramienta para el desarrollo de aplicaciones móviles con React Native.
-
-[![Expo][expo cli]][https://expo.dev/]
+- [Expo](https://expo.dev/) - Herramienta para el desarrollo de aplicaciones móviles con React Native.
