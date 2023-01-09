@@ -47,6 +47,7 @@ export const Home: React.FC<StackNavigationProps<'TabNavigator'>> = ({
       <HeaderBack
         title={`${user?.name}`}
         subtitle={`${user?.number_of_tweets} Tweets`}
+        showBackButton={false}
       />
       <FlashList
         data={tweets}

@@ -14,6 +14,7 @@ import { Inbox } from '@screens/Inbox'
 import { useTheme } from '@root/theme/ThemeProvider'
 import { InitialLoad } from '@screens/InitialLoad'
 import { Tweet } from '@screens/Tweet'
+import { NewTweet } from '@screens/NewTweet'
 
 export const navigationRef = createNavigationContainerRef()
 
@@ -29,6 +30,7 @@ export const Navigation = () => {
       >
         <RootStack.Screen name={'InitialLoad'} component={InitialLoad} />
         <RootStack.Screen name={'Tweet'} component={Tweet} />
+        <RootStack.Screen name={'NewTweet'} component={NewTweet} />
         <RootStack.Screen name={'TabNavigator'} component={TabContainer} />
       </RootStack.Navigator>
     </NavigationContainer>
