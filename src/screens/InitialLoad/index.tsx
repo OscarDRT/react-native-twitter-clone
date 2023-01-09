@@ -4,7 +4,8 @@ import Lottie from 'lottie-react-native'
 import { Box } from '@components/Box'
 import { useUserActions, useUserState } from '@root/hooks/user'
 import useDebounce from 'react-use/lib/useDebounce'
-import { StackNavigationProps } from '@root/utils/commons'
+import { StackNavigationProps, username } from '@root/utils/commons'
+import { useGetTweets, useTweetsState } from '@root/hooks/tweets'
 
 export const InitialLoad: React.FC<StackNavigationProps<'InitialLoad'>> = ({
   navigation,
@@ -13,18 +14,22 @@ export const InitialLoad: React.FC<StackNavigationProps<'InitialLoad'>> = ({
 
   const actions = useUserActions()
 
+  const tweetsState = useTweetsState()
+
+  useGetTweets()
+
   useEffect(() => {
-    actions.getUser({ username: 'Oscar__RT' })
+    actions.getUser({ username })
   }, [])
 
   useDebounce(
     () => {
-      if (state.isSessionActive) {
+      if (state.isSessionActive && tweetsState.isTweetsActive) {
         navigation.navigate('TabNavigator')
       }
     },
     500,
-    [state.isSessionActive]
+    [state.isSessionActive, tweetsState.isTweetsActive]
   )
 
   return (

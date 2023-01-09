@@ -4,7 +4,7 @@ import { createTheme } from '@shopify/restyle'
 const palette = {
   primary: '#00ACEE',
   secondary: '#FFFFFF',
-  tertiary: '#536471',
+  tertiary: '#c2c9d6',
   alternate: 'red',
   primaryBackground: '#FFFFFF',
   secondaryBackground: '#000000',

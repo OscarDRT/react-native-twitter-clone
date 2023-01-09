@@ -3,9 +3,10 @@ import { MainContainer } from '@components/Containers/Main'
 import { FlashList } from '@shopify/flash-list'
 import { HeaderBack } from '@components/Header'
 import { useUserState } from '@root/hooks/user'
-import { Text } from '@components/Text'
 import { ListHeaderComponent } from './auxiliars/ListHeaderComponent'
 import { useTheme } from '@root/theme/ThemeProvider'
+import { useTweets } from '@root/hooks/tweets'
+import { TweetCardById } from '@components/Cards/tweet'
 
 const DATA = [
   {
@@ -21,6 +22,8 @@ export const Home = () => {
 
   const { user } = state
 
+  const tweets = useTweets()
+
   const theme = useTheme()
 
   return (
@@ -31,10 +34,9 @@ export const Home = () => {
       />
       <FlashList
         ListHeaderComponent={() => <ListHeaderComponent user={user as User} />}
-        data={DATA}
-        renderItem={({ item }) => null}
-        estimatedItemSize={200}
-        contentContainerStyle={{ paddingHorizontal: theme.spacing.m }}
+        data={tweets}
+        renderItem={({ item }) => <TweetCardById id={item} />}
+        estimatedItemSize={500}
       />
     </MainContainer>
   )

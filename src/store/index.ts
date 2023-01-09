@@ -4,9 +4,11 @@ import AsyncStorage from '@react-native-async-storage/async-storage'
 import { combineReducers, configureStore, Reducer } from '@reduxjs/toolkit'
 
 import { userReducer, userState } from './user'
+import { tweetsReducer, tweetsState } from './tweets'
 
 export interface ApplicationState {
   user: userState
+  tweets: tweetsState
 }
 
 const rootPersistConfig = {
@@ -17,6 +19,7 @@ const rootPersistConfig = {
 
 const rootApplicationReducerMap = {
   user: userReducer,
+  tweets: tweetsReducer,
 }
 
 export const rootReducer: Reducer = combineReducers<ApplicationState>(

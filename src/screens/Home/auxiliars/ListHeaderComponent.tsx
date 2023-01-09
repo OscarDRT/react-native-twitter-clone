@@ -1,4 +1,6 @@
 import { Box } from '@components/Box'
+import { Text } from '@components/Text'
+import { useTheme } from '@root/theme/ThemeProvider'
 import React from 'react'
 import { Profile } from './Profile'
 import { ProfileBanner } from './ProfileBanner'
@@ -11,6 +13,8 @@ interface ListHeaderComponentProps {
 export const ListHeaderComponent: React.FC<ListHeaderComponentProps> = ({
   user,
 }) => {
+  const theme = useTheme()
+
   return (
     <Box>
       <Box>
@@ -20,6 +24,9 @@ export const ListHeaderComponent: React.FC<ListHeaderComponentProps> = ({
         </Box>
       </Box>
       <Profile user={user} />
+      <Box paddingHorizontal={'m'} height={50} justifyContent={'center'}>
+        <Text variant={'title'}>Tweets</Text>
+      </Box>
     </Box>
   )
 }
