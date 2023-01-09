@@ -6,4 +6,14 @@ const getTweets = (params: { username: string; limit: number }) => {
   })
 }
 
-export { getTweets }
+const getMoreTweets = (params: {
+  username: string
+  limit: number
+  continuation_token: string
+}) => {
+  return apiUrl.get<TweetsResponse>('/user/tweets/continuation', {
+    params,
+  })
+}
+
+export { getTweets, getMoreTweets }

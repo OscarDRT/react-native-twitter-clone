@@ -33,10 +33,13 @@ export const Home = () => {
         subtitle={`${user?.number_of_tweets} Tweets`}
       />
       <FlashList
-        ListHeaderComponent={() => <ListHeaderComponent user={user as User} />}
         data={tweets}
-        renderItem={({ item }) => <TweetCardById id={item} />}
+        keyExtractor={(item, index) => `${item}-${index}`}
         estimatedItemSize={500}
+        renderItem={({ item }) => <TweetCardById id={item} />}
+        ListHeaderComponent={() => <ListHeaderComponent user={user as User} />}
+        onEndReachedThreshold={0.5}
+        onEndReached={() => null}
       />
     </MainContainer>
   )
