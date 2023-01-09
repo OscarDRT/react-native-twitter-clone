@@ -2,7 +2,7 @@ type Tweet = {
   tweet_id: string
   creation_date: string
   text: string
-  media_url: string[]
+  media_url: string[] | null
   video_url?: any
   user: User
   language: string
@@ -13,7 +13,7 @@ type Tweet = {
   retweet: boolean
   views?: any
   timestamp: number
-  video_view_count?: number
+  video_view_count?: number | null
 }
 
 type TweetsResponse = {

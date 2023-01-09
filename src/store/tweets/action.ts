@@ -17,6 +17,10 @@ export const tweetsActions = (dispatch: AppDispatch) => {
       return dispatch(actionsSlice.setTweets(params.response))
     },
 
+    setTweet: (params: { tweet: Tweet }) => {
+      return dispatch(actionsSlice.setTweet(params.tweet))
+    },
+
     getTweets(params: { username: string; limit: number }) {
       return getTweets(params).then(res => {
         if (res.status === 200) {

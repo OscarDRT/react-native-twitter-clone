@@ -4,9 +4,18 @@ import { scale } from '@root/utils/commons'
 import React from 'react'
 import { Pressable } from 'react-native'
 
-export const Tweet = () => {
+interface TweetProps {
+  onPress: () => void
+  disabled: boolean
+}
+
+export const Tweet: React.FC<TweetProps> = ({ onPress, disabled }) => {
   return (
-    <Pressable style={{ opacity: 1 }}>
+    <Pressable
+      style={{ opacity: disabled ? 0.5 : 1 }}
+      onPress={onPress}
+      disabled={disabled}
+    >
       <Box
         backgroundColor={'primary'}
         paddingVertical={'xs'}

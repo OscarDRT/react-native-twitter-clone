@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { createSlice, current, PayloadAction } from '@reduxjs/toolkit'
 
 export interface tweetsState {
   tweets: { [key: string]: Tweet }
@@ -31,6 +31,12 @@ export const tweetsSlice = createSlice({
         },
         { ...state.tweets }
       )
+    },
+    setTweet(state, action: PayloadAction<Tweet>) {
+      state.tweets = {
+        [action.payload.tweet_id]: action.payload,
+        ...current(state.tweets),
+      }
     },
   },
 })
