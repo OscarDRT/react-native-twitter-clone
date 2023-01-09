@@ -10,6 +10,7 @@ const palette = {
   secondaryBackground: '#000000',
   primaryText: '#101213',
   secondaryText: '#57636C',
+  tertiaryText: '#FFFFFF',
   transparent: 'transparent',
 }
 
@@ -23,6 +24,7 @@ const theme = createTheme({
     secondaryBackground: palette.secondaryBackground,
     primaryText: palette.primaryText,
     secondaryText: palette.secondaryText,
+    tertiaryText: palette.tertiaryText,
     transparent: palette.transparent,
   },
   spacing: {

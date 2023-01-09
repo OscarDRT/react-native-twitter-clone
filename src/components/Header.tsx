@@ -22,17 +22,6 @@ export const Header: React.FC<IHeaderProps> = ({ children, ...props }) => {
         justifyContent={'space-between'}
         paddingHorizontal={'m'}
         backgroundColor={'primaryBackground'}
-        style={{
-          shadowColor: '#000',
-          shadowOffset: {
-            width: 0,
-            height: 0.5,
-          },
-          shadowOpacity: 0.18,
-          shadowRadius: 0.5,
-
-          elevation: 0.5,
-        }}
         {...props}
       >
         {children}
@@ -70,7 +59,7 @@ export const HeaderLeft: React.FC<IChildren> = ({ children }) => {
 }
 
 interface IHeaderBack extends BoxProps {
-  title: string
+  title?: string
   subtitle?: string
   children?: React.ReactNode
   showBackButton?: boolean

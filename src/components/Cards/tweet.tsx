@@ -29,8 +29,6 @@ export const TweetCard: React.FC<TweetCardProps> = ({
 }) => {
   const theme = useTheme()
 
-  console.log(tweet.user.name)
-
   return (
     <Pressable
       disabled={disabled}
