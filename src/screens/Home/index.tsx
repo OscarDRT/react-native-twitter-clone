@@ -5,8 +5,11 @@ import { HeaderBack } from '@components/Header'
 import { useUserState } from '@root/hooks/user'
 import { ListHeaderComponent } from './auxiliars/ListHeaderComponent'
 import { useTheme } from '@root/theme/ThemeProvider'
-import { useTweets } from '@root/hooks/tweets'
+import { useGetMoreTweets, useTweets } from '@root/hooks/tweets'
 import { TweetCardById } from '@components/Cards/tweet'
+import { ActivityIndicator } from 'react-native'
+import { Box } from '@components/Box'
+import { scale } from '@root/utils/commons'
 
 const DATA = [
   {
@@ -26,6 +29,8 @@ export const Home = () => {
 
   const theme = useTheme()
 
+  const { loading, onEndReached } = useGetMoreTweets()
+
   return (
     <MainContainer>
       <HeaderBack
@@ -38,8 +43,25 @@ export const Home = () => {
         estimatedItemSize={500}
         renderItem={({ item }) => <TweetCardById id={item} />}
         ListHeaderComponent={() => <ListHeaderComponent user={user as User} />}
+        ListFooterComponent={() => {
+          if (loading) {
+            return (
+              <Box
+                height={scale(50)}
+                justifyContent={'center'}
+                alignItems={'center'}
+              >
+                <ActivityIndicator
+                  size={'large'}
+                  color={theme.colors.primary}
+                />
+              </Box>
+            )
+          }
+          return null
+        }}
         onEndReachedThreshold={0.5}
-        onEndReached={() => null}
+        onEndReached={onEndReached}
       />
     </MainContainer>
   )

@@ -52,3 +52,28 @@ export const useGetTweets = () => {
     loading
   }, [loading])
 }
+
+export const useGetMoreTweets = () => {
+  const { getMoreTweets } = useTweetsActions()
+  const tweetsState = useTweetsState()
+
+  const [loading, setLoading] = useState(false)
+
+  /* This should go inside a useEffect,
+    because of the number of requests per second I added a useDebounce 
+  */
+
+  const onEndReached = () => {
+    setLoading(true)
+    getMoreTweets({
+      username,
+      limit: 15,
+      continuation_token: tweetsState.continuationToken,
+    })
+      .then(() => setLoading(false))
+      .catch(() => setLoading(false))
+      .finally(() => setLoading(false))
+  }
+
+  return { loading, onEndReached }
+}

@@ -1,4 +1,4 @@
-import { getTweets } from '@root/api/tweets'
+import { getMoreTweets, getTweets } from '@root/api/tweets'
 import { AppDispatch } from '..'
 import { actions as actionsSlice } from './index'
 
@@ -21,6 +21,18 @@ export const tweetsActions = (dispatch: AppDispatch) => {
       return getTweets(params).then(res => {
         if (res.status === 200) {
           actions.setIsTweetsActive({ isTweetsActive: true })
+          actions.setTweets({ response: res.data })
+        }
+        return res
+      })
+    },
+    getMoreTweets(params: {
+      username: string
+      limit: number
+      continuation_token: string
+    }) {
+      return getMoreTweets(params).then(res => {
+        if (res.status === 200) {
           actions.setTweets({ response: res.data })
         }
         return res
