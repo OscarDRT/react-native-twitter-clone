@@ -14,6 +14,9 @@ To run the app on your local machine, you must first make sure you have an Expo 
 - [Single Tweet View](https://github.com/OscarDRT/react-native-twitter-clone/blob/main/images/Single_Tweet_View.jpeg)
 - [New tweet](https://github.com/OscarDRT/react-native-twitter-clone/blob/main/images/New_tweet.jpeg)
 
+
+- [Expo Link](https://expo.dev/%40oscardrt/react-native-twitter-clone?serviceType=classic&distribution=expo-go&releaseChannel=default)
+
 ## Built With
 
 - [Expo](https://expo.dev/) - Tool for the development of mobile applications with React Native.
