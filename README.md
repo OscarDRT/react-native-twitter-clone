@@ -8,14 +8,14 @@ This repository contains a Twitter clone app made with React Native and Expo cli
 
 To run the app on your local machine, you must first make sure you have an Expo development environment set up. You can find instructions on how to do this in the Expo documentation.
 
+## Link
+- [Expo Link](https://expo.dev/%40oscardrt/react-native-twitter-clone?serviceType=classic&distribution=expo-go&releaseChannel=default)
+
 ## Features
 
 - [User Profile](https://github.com/OscarDRT/react-native-twitter-clone/blob/main/images/User_Profile.jpeg)
 - [Single Tweet View](https://github.com/OscarDRT/react-native-twitter-clone/blob/main/images/Single_Tweet_View.jpeg)
 - [New tweet](https://github.com/OscarDRT/react-native-twitter-clone/blob/main/images/New_tweet.jpeg)
-
-
-- [Expo Link](https://expo.dev/%40oscardrt/react-native-twitter-clone?serviceType=classic&distribution=expo-go&releaseChannel=default)
 
 ## Built With
 
