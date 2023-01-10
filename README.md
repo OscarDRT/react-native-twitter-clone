@@ -14,14 +14,6 @@ To run the app on your local machine, you must first make sure you have an Expo 
 - Single Tweet View
 - New tweet
 
-## Screenshots
-
-![User Profile](https://github.com/OscarDRT/react-native-twitter-clone/blob/main/images/User_Profile.jpeg)
-
-![Single Tweet View](https://github.com/OscarDRT/react-native-twitter-clone/blob/main/images/Single_Tweet_View.jpeg)
-
-![New tweet](https://github.com/OscarDRT/react-native-twitter-clone/blob/main/images/New_tweet.jpeg)
-
 ## Built With
 
 - [Expo](https://expo.dev/) - Tool for the development of mobile applications with React Native.
@@ -103,3 +95,11 @@ export const Notifications = () => {
 
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/oscardrt/)
 [![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/Oscar__RT)
+
+## Screenshots
+
+![User Profile](https://github.com/OscarDRT/react-native-twitter-clone/blob/main/images/User_Profile.jpeg)
+
+![Single Tweet View](https://github.com/OscarDRT/react-native-twitter-clone/blob/main/images/Single_Tweet_View.jpeg)
+
+![New tweet](https://github.com/OscarDRT/react-native-twitter-clone/blob/main/images/New_tweet.jpeg)
