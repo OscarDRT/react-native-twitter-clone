@@ -10,7 +10,7 @@ import { useUserState } from '@root/hooks/user'
 import { generateUniqueId, scale } from '@root/utils/commons'
 import moment from 'moment'
 import React, { useState } from 'react'
-import { TextInput } from 'react-native'
+import { TextInput } from 'react-native-gesture-handler'
 import { Tweet } from './auxiliars/Tweet'
 
 export const NewTweet = () => {
