@@ -2,7 +2,7 @@ import { API_URL } from '@env'
 import Axios from 'axios'
 
 export const apiUrl = Axios.create({
-  baseURL: API_URL,
+  baseURL: 'https://twitter154.p.rapidapi.com',
 })
 
 apiUrl.defaults.headers['X-RapidAPI-Host'] = 'twitter154.p.rapidapi.com'
